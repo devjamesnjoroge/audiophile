@@ -6,7 +6,7 @@ export const Navbar = () => {
     <div className="px-6 md:px-28 bg-zinc-900">
       <div className="wrapper flex justify-between items-center py-8 border-b border-text-grey">
       <h1 className="logo text-2xl text-white font-extrabold">audiophile</h1>
-      <ul className="list-none flex items-center gap-5">
+      <ul className="list-none flex items-center gap-5 hidden md:block">
         <li>
           <Link className="text-text-grey font-bold uppercase" href={'/'}>
             Home
