@@ -28,6 +28,9 @@ const config: Config = {
         'background-secondary': '#101010',
         'border': '#CFCFCF',
       },
+      height: {
+        '98': '98vh', // Adds the class `h-85`
+      },
     },
   },
   plugins: [],
