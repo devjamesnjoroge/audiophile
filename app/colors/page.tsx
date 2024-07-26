@@ -20,7 +20,7 @@ const colors = [
     return (
       <div className="p-8">
         <h1 className="text-3xl font-bold mb-8">Color Palette</h1>
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-4">
           {colors.map((color) => (
             <div key={color.name} className="flex items-center">
               <div className={`${color.className} w-16 h-16 rounded-lg mr-4`} />
