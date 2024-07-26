@@ -8,12 +8,27 @@ export const Navbar = () => {
       <b className="logo text-2xl text-white font-extrabold">audiophile</b>
       <ul className="list-none flex items-center gap-5 hidden md:flex">
         <li>
-          <Link className="text-text-grey font-bold uppercase inline-block" href={'/'}>
+          <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/'}>
             Home
           </Link>
         </li>
         <li>
-          <Link className="text-text-grey font-bold uppercase inline-block" href={'/colors'}>
+          <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/colors'}>
+            headphones
+          </Link>
+        </li>
+        <li>
+          <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/colors'}>
+            speakers
+          </Link>
+        </li>
+        <li>
+          <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/colors'}>
+            earphones
+          </Link>
+        </li>
+        <li>
+          <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/colors'}>
             Colors
           </Link>
         </li>
