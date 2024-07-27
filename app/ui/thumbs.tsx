@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Thumbs = () => {
   return (
-    <div className="w-full flex flex-col items-center lg:flex-row justify-evenly gap-8 lg:gap-12 py-20 lg:py-[8rem] bg-white">
+    <div className="w-full flex flex-col items-center lg:flex-row justify-evenly gap-8 lg:gap-12 py-20 lg:py-[8rem] bg-white px-8">
       <div className="roworcol bg-light-grey px-8 py-8 lg:px-12 lg:py-12 relative rounded-lg flex flex-col items-center text-center w-full max-w-md lg:max-w-lg">
         <Image
           className="absolute top-[-30%] left-1/2 transform -translate-x-1/2"
