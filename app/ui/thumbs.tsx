@@ -13,7 +13,7 @@ const Thumbs = () => {
           alt="thumbnail headphone"
         />
         <div className="relative z-10 flex flex-col items-center text-center">
-          <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4">headphones</h2>
+          <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4 text-secondary">headphones</h2>
           <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="/">
             shop <span className="text-primary">{'>'}</span>
           </Link>
@@ -28,7 +28,7 @@ const Thumbs = () => {
           alt="thumbnail speaker"
         />
         <div className="relative z-10 flex flex-col items-center text-center">
-          <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4">earphones</h2>
+          <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4 text-secondary">earphones</h2>
           <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="/">
             shop <span className="text-primary">{'>'}</span>
           </Link>
