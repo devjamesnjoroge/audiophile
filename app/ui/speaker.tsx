@@ -47,9 +47,23 @@ const SpeakerPromo = () => {
                 </Link>
             </div>
         </div>
+        <div className="info flex flex-col lg:flex-row gap-12 items-center lg:items-center py-24">
+            <div className="rows flex-1 lg:pr-12 flex flex-col justify-center">
+                <h2 className="text-4xl font-bold mb-4 text-center lg:text-left uppercase">
+                    Bringing you the <span className="text-primary">best</span> audio gear
+                </h2>
+                <p className="text-lg leading-relaxed text-center lg:text-left text-dark-grey">
+                    Located at the heart of New York, Audiophile is the premier store for high-end headphones, earphones, speakers, and audio accessories. We have a large showroom and luxury demonstration rooms available for you to browse and experience a wide range of our products. Stop by our store to meet some of the fantastic people who make Audiophile the best place to buy your portable audio equipment.
+                </p>
+            </div>
+            <div className="rows flex-1 flex justify-center lg:justify-end">
+                <Image src='/best-gear.png' width={540} height={588} alt='best gear' className="w-full rounded-lg h-auto object-cover"/>
+            </div>
+        </div>
+
 
         </div>
     )
 }
 
-export default SpeakerPromo;
+export default SpeakerPromo;  
