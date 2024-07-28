@@ -21,6 +21,14 @@ const SpeakerPromo = () => {
             </div>
             </div>
         </div>
+        <div className="pt-24">
+            <div className="cardpromo h-[50vh] w-full bg-[url('/speaker-seven.png')] bg-cover bg-center rounded-lg ps-24 pt-28">
+            <h2 className="mb-8 text-4xl uppercase font-bold">zx7 Speaker</h2>
+            <Link className="bg-secondary text-white font-bold px-8 py-3 text-sm uppercase" href=''>
+                see product
+            </Link>
+            </div>
+        </div>
         </div>
     )
 }
