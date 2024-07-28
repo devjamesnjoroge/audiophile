@@ -24,11 +24,30 @@ const SpeakerPromo = () => {
         <div className="pt-24">
             <div className="cardpromo h-[50vh] w-full bg-[url('/speaker-seven.png')] bg-cover bg-center rounded-lg ps-24 pt-28">
             <h2 className="mb-8 text-4xl uppercase font-bold text-secondary">zx7 Speaker</h2>
-            <Link className="bg-secondary text-white font-bold px-8 py-3 text-sm uppercase" href=''>
+            <Link className="bg-grey text-secondary border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" href=''>
                 see product
             </Link>
             </div>
         </div>
+        <div className="pt-24 flex flex-col lg:flex-row gap-12">
+            <Image 
+                className="w-full lg:w-1/2 rounded-lg" 
+                src='/earbuds.png' 
+                alt='earbuds' 
+                height={540} 
+                width={320} 
+            />
+            <div className="cardpromo w-full lg:w-1/2 bg-medium-grey rounded-lg lg:pl-24 lg:py-24 py-12 justify-center p-6">
+                <h2 className="mb-8 text-4xl uppercase font-bold text-secondary">Yx1 earphones</h2>
+                <Link 
+                    className="inline-block flex-start bg-medium-grey text-secondary border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" 
+                    href=''
+                >
+                    see product
+                </Link>
+            </div>
+        </div>
+
         </div>
     )
 }
