@@ -49,7 +49,7 @@ const SpeakerPromo = () => {
         </div>
         <div className="info flex flex-col lg:flex-row gap-12 items-center lg:items-center py-24">
             <div className="rows flex-1 lg:pr-12 flex flex-col justify-center">
-                <h2 className="text-[3rem] font-bold mb-4 text-center lg:text-left uppercase">
+                <h2 className="text-[3rem] font-bold text-secondary mb-4 text-center lg:text-left uppercase">
                     Bringing you the <span className="text-primary">best</span> audio gear
                 </h2>
                 <p className="text-lg leading-relaxed text-center lg:text-left text-dark-grey">
