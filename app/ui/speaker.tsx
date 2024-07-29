@@ -15,7 +15,7 @@ const SpeakerPromo = () => {
             <div className="flex-1 flex flex-col justify-center lg:justify-start items-center lg:items-start h-auto lg:h-full md:gap-8 ms-0 lg:ms-[6rem] text-center lg:text-left">
                 <h2 className="text-3xl lg:text-6xl font-bold text-white uppercase">Zx9 speaker</h2>
                 <p className="text-light-grey mt-8 mb-4 md:mt-0 md:mb-0">Upgrade to premium speakers that are phenomenally built to deliver truly remarkable sound.</p>
-                <Link className="bg-secondary text-white font-bold px-8 py-3 text-sm uppercase" href=''>
+                <Link className="bg-secondary text-white hover:bg-light-grey hover:text-secondary font-bold px-8 py-3 text-sm uppercase" href=''>
                 see product
                 </Link>
             </div>
@@ -24,7 +24,7 @@ const SpeakerPromo = () => {
         <div className="pt-24">
             <div className="cardpromo h-[50vh] w-full bg-[url('/speaker-seven.png')] bg-cover bg-center rounded-lg ps-24 pt-28">
             <h2 className="mb-8 text-4xl uppercase font-bold text-secondary">zx7 Speaker</h2>
-            <Link className="bg-grey text-secondary border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" href=''>
+            <Link className="bg-grey text-secondary hover:bg-secondary hover:text-white border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" href=''>
                 see product
             </Link>
             </div>
@@ -40,7 +40,7 @@ const SpeakerPromo = () => {
             <div className="cardpromo w-full lg:w-1/2 bg-medium-grey rounded-lg lg:pl-24 lg:py-24 py-12 justify-center p-6">
                 <h2 className="mb-8 text-4xl uppercase font-bold text-secondary">Yx1 earphones</h2>
                 <Link 
-                    className="inline-block flex-start bg-medium-grey text-secondary border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" 
+                    className="inline-block hover:bg-secondary hover:text-white flex-start bg-medium-grey text-secondary border-secondary border-2 font-bold px-8 py-3 text-sm uppercase" 
                     href=''
                 >
                     see product
