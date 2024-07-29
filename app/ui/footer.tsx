@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="flex-1 mb-8 md:mb-0 text-center md:text-left">
                     <b className="text-2xl text-white font-extrabold">audiophile</b>
                     <p className="text-light-grey text-sm max-w-md my-8 mx-auto md:mx-0">
-                        Audiophile is an all in one stop to fulfill your audio needs. We're a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we're open 7 days a week.
+                    Audiophile is an all in one stop to fulfill your audio needs. We&apos;re a small team of music lovers and sound specialists who are devoted to helping you get the most out of personal audio. Come and visit our demo facility - we&apos;re open 7 days a week.
                     </p>
                     <span className="text-light-grey text-xs block mt-4">
                         Copyright 2021. All Rights Reserved.
