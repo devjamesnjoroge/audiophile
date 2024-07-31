@@ -1,6 +1,7 @@
 // app/page.tsx
 import Image from 'next/image';
 import { use } from 'react';
+import { fetchFromApi } from '../lib/fetcher';
 
 type Earphone = {
   id: number;
@@ -11,16 +12,13 @@ type Earphone = {
 };
 
 async function fetchEarphones() {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-    if (!baseUrl) {
-        throw new Error('API base URL is not defined');
-    }
-    const response = await fetch(`${baseUrl}/earphones`);
-  if (!response.ok) {
-    throw new Error('Failed to fetch');
-  }
-  const data: Earphone[] = await response.json();
-  return data;
+  try {
+    const data: Earphone[] = await fetchFromApi('earphones');
+    return data;
+} catch (error) {
+    console.error('Error fetching earphones:', error);
+    return [];
+}
 }
 
 export default function HomePage() {
