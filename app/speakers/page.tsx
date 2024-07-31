@@ -11,8 +11,11 @@ type Speaker = {
 };
 
 async function fetchSpeakers() {
-  // Use an absolute URL or make sure the path is correct
-  const response = await fetch('/api/speakers');
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (!baseUrl) {
+        throw new Error('API base URL is not defined');
+    }
+    const response = await fetch(`${baseUrl}/speakers`);
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }

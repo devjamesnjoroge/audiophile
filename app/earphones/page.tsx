@@ -11,8 +11,11 @@ type Earphone = {
 };
 
 async function fetchEarphones() {
-  // Use an absolute URL or make sure the path is correct
-  const response = await fetch('/api/earphones');
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (!baseUrl) {
+        throw new Error('API base URL is not defined');
+    }
+    const response = await fetch(`${baseUrl}/earphones`);
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }
