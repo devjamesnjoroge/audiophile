@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FaCartShopping } from 'react-icons/fa6';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,6 +17,17 @@ export const Navbar = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
+
+  const activePath = usePathname();
+  console.log(activePath);
+
+  const navlinks = [
+    {"class": "text-light-grey font-bold text-sm uppercase inline-block", "href": "/", "name": "home"},
+    {"class": "text-light-grey font-bold text-sm uppercase inline-block", "href": "/headphones", "name": "headphones"},
+    {"class": "text-light-grey font-bold text-sm uppercase inline-block", "href": "/speakers", "name": "speakers"},
+    {"class": "text-light-grey font-bold text-sm uppercase inline-block", "href": "/earphones", "name": "earphones"},
+    {"class": "text-light-grey font-bold text-sm uppercase inline-block", "href": "/colors", "name": "colors"},
+  ]
 
   return (
     <div className="px-6 md:px-28 bg-zinc-900">
@@ -28,35 +41,15 @@ export const Navbar = () => {
           >
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
-          <b className="logo text-2xl text-white font-extrabold">audiophile</b>
+          <b className="logo text-3xl text-white font-extrabold">audiophile</b>
         </div>
 
         <ul className="list-none flex items-center gap-5 hidden md:flex">
-          <li>
-            <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/'}>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/headphones'}>
-              Headphones
-            </Link>
-          </li>
-          <li>
-            <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/speakers'}>
-              Speakers
-            </Link>
-          </li>
-          <li>
-            <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/earphones'}>
-              Earphones
-            </Link>
-          </li>
-          <li>
-            <Link className="text-light-grey font-bold text-sm uppercase inline-block" href={'/colors'}>
-              Colors
-            </Link>
-          </li>
+          {
+            navlinks.map(navlink => (<li key={navlink.name}>
+              <Link className={clsx(navlink.class, navlink.href == activePath && "text-primary")} href={navlink.href}>{navlink.name}</Link>
+            </li>))
+          }
         </ul>
         <h3 className="flex items-center">
           <FaCartShopping className="text-2xl" color="white" />
