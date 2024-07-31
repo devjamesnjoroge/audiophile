@@ -12,7 +12,7 @@ type Speaker = {
 
 async function fetchSpeakers() {
   // Use an absolute URL or make sure the path is correct
-  const response = await fetch('http://localhost:3000/api/speakers');
+  const response = await fetch('/api/speakers');
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }

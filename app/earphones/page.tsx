@@ -12,7 +12,7 @@ type Earphone = {
 
 async function fetchEarphones() {
   // Use an absolute URL or make sure the path is correct
-  const response = await fetch('http://localhost:3000/api/earphones');
+  const response = await fetch('/api/earphones');
   if (!response.ok) {
     throw new Error('Failed to fetch');
   }
