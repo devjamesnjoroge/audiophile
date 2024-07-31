@@ -1,7 +1,7 @@
 // app/page.tsx
 import Image from 'next/image';
 import { use } from 'react';
-import { fetchFromApi } from '../lib/fetcher';
+import { fetchSpeakers } from '../lib/fetcher';
 
 type Speaker = {
   id: number;
@@ -11,22 +11,19 @@ type Speaker = {
   image_url: string;
 };
 
-async function fetchSpeakers() {
-  try {
-    const data: Speaker[] = await fetchFromApi('speakers');
-    return data;
-} catch (error) {
-    console.error('Error fetching speakers:', error);
-    return [];
-}
-}
-
 export default function HomePage() {
   const speakers = use(fetchSpeakers());
 
+  // Check if the data is an array and has at least one item
+  if (!Array.isArray(speakers) || speakers.length === 0) {
+    return <p className='text-center text-gray-500 py-12'>No speakers available</p>;
+  }
+
   return (
     <div>
-      <h1 className='flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>speakers</h1>
+      <h1 className='flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>
+        Speakers
+      </h1>
       <ul className='space-y-6 bg-white px-8 lg:px-24 py-12'>
         {speakers.map((speaker) => (
           <li

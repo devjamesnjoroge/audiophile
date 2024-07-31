@@ -10,3 +10,38 @@ export async function fetchFromApi(endpoint: string) {
     }
     return response.json();
 }
+
+export async function fetchSpeakers() {
+    try {
+      const data = await fetchFromApi('speakers');
+      // Ensure the rows are an array
+      return Array.isArray(data.rows) ? data.rows : [];
+    } catch (error) {
+      console.error('Error fetching speakers:', error);
+      return [];
+    }
+  }
+
+export async function fetchHeadphones() {
+    try {
+      const data = await fetchFromApi('headphones');
+      // Ensure the rows are an array
+      return Array.isArray(data.rows) ? data.rows : [];
+    } catch (error) {
+      console.error('Error fetching headphones:', error);
+      return [];
+    }
+  }
+  
+
+export async function fetchEarphones() {
+    try {
+      const data = await fetchFromApi('earphones');
+      // Ensure the rows are an array
+      return Array.isArray(data.rows) ? data.rows : [];
+    } catch (error) {
+      console.error('Error fetching earphones:', error);
+      return [];
+    }
+  }
+

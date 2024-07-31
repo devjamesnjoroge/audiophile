@@ -1,7 +1,7 @@
 // app/page.tsx
 import Image from 'next/image';
 import { use } from 'react';
-import { fetchFromApi } from '../lib/fetcher';
+import { fetchHeadphones } from '../lib/fetcher';
 
 type Headphone = {
   id: number;
@@ -11,22 +11,19 @@ type Headphone = {
   image_url: string;
 };
 
-async function fetchHeadphones() {
-  try {
-    const data: Headphone[] = await fetchFromApi('headphones');
-    return data;
-} catch (error) {
-    console.error('Error fetching headphones:', error);
-    return [];
-}
-}
-
 export default function HomePage() {
   const headphones = use(fetchHeadphones());
 
+  // Check if the data is an array and has at least one item
+  if (!Array.isArray(headphones) || headphones.length === 0) {
+    return <p className='text-center text-gray-500 py-12'>No headphones available</p>;
+  }
+
   return (
     <div>
-      <h1 className='flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>Headphones</h1>
+      <h1 className='flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>
+        Headphones
+      </h1>
       <ul className='space-y-6 bg-white px-8 lg:px-24 py-12'>
         {headphones.map((headphone) => (
           <li
