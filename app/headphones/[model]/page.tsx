@@ -1,5 +1,5 @@
 // app/headphones/[model]/page.tsx
-'use client'
+'use client';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -18,7 +18,7 @@ type Headphone = {
   model: string;
 };
 
-export default function headphonePage({ params }: { params: { model: string } }) {
+export default function Page({ params }: { params: { model: string } }) {
   const { model } = params;
   const [headphone, setheadphone] = useState<Headphone | null>(null);
   const [error, setError] = useState<string | null>(null);

@@ -1,5 +1,5 @@
 // app/speakers/[model]/page.tsx
-'use client'
+'use client';
 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -18,7 +18,7 @@ type Speaker = {
   model: string;
 };
 
-export default function SpeakerPage({ params }: { params: { model: string } }) {
+export default function Page({ params }: { params: { model: string } }) {
   const { model } = params;
   const [speaker, setSpeaker] = useState<Speaker | null>(null);
   const [error, setError] = useState<string | null>(null);
