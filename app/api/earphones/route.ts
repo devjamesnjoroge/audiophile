@@ -1,4 +1,4 @@
-// app/api/headphones/route.ts
+// app/api/earphones/route.ts
 import { NextResponse } from 'next/server';
 import sql from '@/app/lib/db'; // Adjust path as needed
 

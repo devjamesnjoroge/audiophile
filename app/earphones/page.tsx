@@ -1,4 +1,4 @@
-// app/page.tsx
+// app/earphones/page.tsx
 import Image from 'next/image';
 import { use } from 'react';
 import { fetchEarphones } from '../lib/fetcher';

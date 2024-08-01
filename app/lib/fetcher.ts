@@ -45,3 +45,38 @@ export async function fetchEarphones() {
     }
   }
 
+  export async function fetchEarphoneByModel(model: string) {
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/earphones/${model}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.statusText}`);
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(`Error fetching earphone by model ${model}:`, error);
+      return null;
+    }
+  }
+  
+  
+
+export async function fetchHeadphoneByModel(model: string) {
+  try {
+      const data = await fetchFromApi(`headphones/${model}`);
+      return data;
+  } catch (error) {
+      console.error(`Error fetching earphone by model ${model}:`, error);
+      return null;
+  }
+}
+
+export async function fetchSpeakerByModel(model: string) {
+  try {
+      const data = await fetchFromApi(`speakers/${model}`);
+      return data;
+  } catch (error) {
+      console.error(`Error fetching earphone by model ${model}:`, error);
+      return null;
+  }
+}
