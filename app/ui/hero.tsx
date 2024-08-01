@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 const Hero = () => {
@@ -9,9 +10,9 @@ const Hero = () => {
             <h4 className="text-text-grey uppercase tracking-[.5em]">new product</h4>
             <h1 className="uppercase text-4xl lg:text-6xl font-bold tracking-widest lg:w-1/2">xx99 Mark II Headphones</h1>
             <p className="text-text-grey w-4/5 lg:w-2/5">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-            <button className="btn bg-primary px-8 py-4 uppercase font-bold self-center lg:self-start">
+            <Link href="headphones/xx99_mark_ii" className="btn bg-primary px-8 py-4 uppercase font-bold self-center lg:self-start">
                 see product
-            </button>
+            </Link>
             </div>
         </section>
         </>

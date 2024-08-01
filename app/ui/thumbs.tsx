@@ -14,7 +14,7 @@ const Thumbs = () => {
         />
         <div className="relative z-10 flex flex-col items-center text-center">
           <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4 text-secondary">headphones</h2>
-          <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="/">
+          <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="headphones">
             shop <span className="text-primary">{'>'}</span>
           </Link>
         </div>
@@ -29,7 +29,7 @@ const Thumbs = () => {
         />
         <div className="relative z-10 flex flex-col items-center text-center">
           <h2 className="uppercase font-bold text-lg lg:text-xl mt-12 mb-4 text-secondary">earphones</h2>
-          <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="/">
+          <Link className="uppercase font-bold text-dark-grey text-sm lg:text-base mb-2" href="earphones">
             shop <span className="text-primary">{'>'}</span>
           </Link>
         </div>

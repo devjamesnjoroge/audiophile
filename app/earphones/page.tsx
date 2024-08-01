@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { use } from 'react';
 import { fetchEarphones } from '../lib/fetcher';
+import Link from 'next/link';
 
 type Earphone = {
   id: number;
@@ -9,6 +10,7 @@ type Earphone = {
   title: string;
   description: string;
   image_url: string;
+  model: string;
 };
 
 export default function HomePage() {
@@ -49,9 +51,9 @@ export default function HomePage() {
               <p className='text-dark-grey text-center lg:text-start'>
                 {earphone.description}
               </p>
-              <button className="btn bg-primary px-8 py-4 uppercase font-bold self-center lg:self-start mt-12 text-white">
+              <Link href={`earphones/${earphone.model}`} className="btn bg-primary px-8 py-4 uppercase font-bold self-center lg:self-start mt-12 text-white">
                 See product
-              </button>
+              </Link>
             </div>
           </li>
         ))}
