@@ -50,7 +50,7 @@ export default function Page({ params }: { params: { model: string } }) {
 
   return (
     <div>
-      <h1 className='flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>
+      <h1 className='px-8 lg:px-24 w-full flex items-center justify-center text-4xl bg-zinc-900 text-white uppercase py-24 tracking-[.1em] font-bold'>
         {speaker.title}
       </h1>
       <div className='bg-white px-8 lg:px-24 py-12'>
@@ -80,9 +80,7 @@ export default function Page({ params }: { params: { model: string } }) {
             <p className='text-dark-grey text-center lg:text-start mt-4'>
               <strong>Price: </strong>${speaker.price}
             </p>
-            <button className="btn bg-primary px-8 py-4 uppercase font-bold self-center lg:self-start mt-12 text-white">
-              See product
-            </button>
+          
           </div>
         </div>
         <div className='mt-12'>
