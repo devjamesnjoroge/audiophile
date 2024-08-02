@@ -4,24 +4,31 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { fetchEarphoneByModel } from '@/app/lib/fetcher';
-
-type Earphone = {
-  id: number;
-  is_new: boolean;
-  title: string;
-  description: string;
-  image_url: string;
-  in_the_box: { item: string; quantity: number }[];
-  gallery_images: string[];
-  features: string;
-  price: string;
-  model: string;
-};
+import Qty from '@/app/ui/qty';
+import { Earphone, Product } from '@/app/types';
 
 export default function Page({ params }: { params: { model: string } }) {
   const { model } = params;
   const [earphone, setEarphone] = useState<Earphone | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const updateCart = (product: Product, quantity: number) => {
+    const cart = JSON.parse(localStorage.getItem('products') || '[]');
+    const updatedCart = cart.map((p: Product) => {
+      if (p.model === product.model) {
+        return { ...p, quantity };
+      }
+      return p;
+    }).filter((p: Product) => p.quantity > 0);
+
+    if (!updatedCart.find((p: Product) => p.model === product.model)) {
+      updatedCart.push({ ...product, quantity });
+    }
+
+    localStorage.setItem('products', JSON.stringify(updatedCart));
+    const totalQty = updatedCart.reduce((acc: number, p: Product) => acc + p.quantity, 0);
+    localStorage.setItem('totalQty', totalQty.toString());
+  };
 
   useEffect(() => {
     async function loadEarphone() {
@@ -30,7 +37,7 @@ export default function Page({ params }: { params: { model: string } }) {
         if (!data) {
           setError('Failed to load data.');
         } else {
-          setEarphone(data);
+          setEarphone({ ...data, quantity: 1 }); // Add default quantity
         }
       } catch (err) {
         console.error(`Error loading earphone data:`, err);
@@ -80,7 +87,7 @@ export default function Page({ params }: { params: { model: string } }) {
             <p className='text-dark-grey text-center lg:text-start mt-4'>
               <strong>Price: </strong>${earphone.price}
             </p>
-           
+            <Qty product={earphone} updateCart={updateCart} />
           </div>
         </div>
         <div className='mt-12'>
@@ -114,11 +121,11 @@ export default function Page({ params }: { params: { model: string } }) {
           </div>
         </div>
         <div className='mt-12'>
-          <h3 className='text-2xl font-bold mb-6'>In the Box</h3>
+          <h3 className='text-2xl font-bold mb-6 text-secondary'>In the Box</h3>
           <ul>
             {earphone.in_the_box.map((item, index) => (
               <li key={index} className='text-dark-grey text-center lg:text-start'>
-                {item.quantity}x {item.item}
+                <span className='text-primary font-bold'>{item.quantity}x</span> {item.item}
               </li>
             ))}
           </ul>

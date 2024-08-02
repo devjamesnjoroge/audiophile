@@ -6,9 +6,17 @@ import { FaCartShopping } from 'react-icons/fa6';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
+import Modal from './modal';
+import Cart from './cart';
+import { CartProvider } from '../context/CartContext';
 
-export const Navbar = () => {
+export const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -52,7 +60,7 @@ export const Navbar = () => {
           }
         </ul>
         <h3 className="flex items-center">
-          <FaCartShopping className="text-2xl" color="white" />
+          <FaCartShopping onClick={openModal} className="text-2xl" color="white" />
         </h3>
       </div>
 
@@ -108,6 +116,11 @@ export const Navbar = () => {
           </ul>
         </div>
       )}
+      <CartProvider>
+          <Modal isOpen={isModalOpen} onClose={closeModal}>
+            <Cart />
+          </Modal>
+      </CartProvider>
     </div>
   );
 };

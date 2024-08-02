@@ -5,6 +5,7 @@ import { Manrope } from 'next/font/google';
 import { Navbar } from './ui/navBar';
 import Footer from './ui/footer';
 
+
 const manrope = Manrope({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -18,12 +19,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    
     <html lang="en">
       <body className={manrope.className}>
+      
         <header>
           <Navbar />
         </header>
+ 
+
         {children}
+
         <Footer />
       </body>
     </html>

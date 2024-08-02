@@ -4,14 +4,6 @@ import { use } from 'react';
 import { fetchEarphones } from '../lib/fetcher';
 import Link from 'next/link';
 
-type Earphone = {
-  id: number;
-  is_new: boolean;
-  title: string;
-  description: string;
-  image_url: string;
-  model: string;
-};
 
 export default function HomePage() {
   const earphones = use(fetchEarphones());

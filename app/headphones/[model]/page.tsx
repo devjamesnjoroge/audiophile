@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { fetchHeadphoneByModel } from '@/app/lib/fetcher';
+import Qty from '@/app/ui/qty';
 
 type Headphone = {
   id: number;
@@ -80,7 +81,7 @@ export default function Page({ params }: { params: { model: string } }) {
             <p className='text-dark-grey text-center lg:text-start mt-4'>
               <strong>Price: </strong>${headphone.price}
             </p>
-           
+            <Qty product={headphone} />
           </div>
         </div>
         <div className='mt-12'>
@@ -114,11 +115,11 @@ export default function Page({ params }: { params: { model: string } }) {
           </div>
         </div>
         <div className='mt-12'>
-          <h3 className='text-2xl font-bold mb-6'>In the Box</h3>
+          <h3 className='text-2xl font-bold mb-6 text-secondary'>In the Box</h3>
           <ul>
             {headphone.in_the_box.map((item, index) => (
               <li key={index} className='text-dark-grey text-center lg:text-start'>
-                {item.quantity}x {item.item}
+                <span className='text-primary font-bold'>{item.quantity}x</span> {item.item}
               </li>
             ))}
           </ul>
